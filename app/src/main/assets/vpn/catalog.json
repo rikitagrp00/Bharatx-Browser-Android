@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "servers": [
+    {
+      "id": "france",
+      "name": "France",
+      "tier": "free",
+      "asset": "vpn/free/france.ovpn",
+      "requiresCredentials": false,
+      "sha256": "bc3c8c4ea9b2d785e83dd715f6c350e9749f4316c9490667b0a41c8abb077b54",
+      "access": "free"
+    },
+    {
+      "id": "lithuania",
+      "name": "Lithuania",
+      "tier": "premium",
+      "asset": "vpn/premium/lithuania.ovpn",
+      "requiresCredentials": false,
+      "sha256": "23da1257f68c9d5bf6cc664b0076eae6b09b29b3bd2df92cb0f2a10c64cfc931",
+      "access": "rewarded"
+    }
+  ]
+}

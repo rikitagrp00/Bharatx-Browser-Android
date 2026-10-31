@@ -1,0 +1,53 @@
+{
+  "versionName": "1.38.0",
+  "sourceAudit": {
+    "passed": true,
+    "checks": [
+      "BharatX app ID and independent APK/AAB version codes",
+      "596 resource XML files parsed; launcher names and localized branding checked",
+      "Internal policy activity registered; no inherited upstream shared UID",
+      "Offline About/Privacy/Disclaimer contain supplied contacts and the advertising provider privacy reference",
+      "About/onboarding legal links route to native offline pages; old release navigation removed",
+      "Launcher, private launcher and product logo resources use the supplied logo",
+      "MPL and original attribution retained; only the BharatX Android workflow is active",
+      "RikiVpn AAR integrity and ELF machine verified for four ABIs; 64-bit engines have 16 KiB LOAD alignment",
+      "Asset catalog validated: 1 free, 1 reward-gated premium profiles; no embedded login files",
+      "Appnext placement and Play monthly product/SDK pins match; Store pricing and VPN reward gate wired"
+    ],
+    "applicationId": "com.nitaistudio.bharatxbrowser",
+    "versionName": "1.38.0",
+    "apkBuilt": false
+  },
+  "sdkParserChecksPassed": 8,
+  "assetPolicyNegativeChecksPassed": 4,
+  "monetizationPolicyChecksPassed": 30,
+  "apkBuilt": false,
+  "aabBuilt": false,
+  "realDeviceTunnelTested": false,
+  "liveAdsRequested": false,
+  "purchaseLaunched": false,
+  "storeDashboardChanged": false,
+  "premiumEndpointsIncluded": 1,
+  "premiumTierMeaning": "App access unlocked by one completed rewarded video or active monthly ad-removal subscription; not a dedicated/private provider claim",
+  "newFeatureKotlinApiCompilation": {
+    "passed": true,
+    "warningsAsErrors": true,
+    "fileCount": 11,
+    "androidApi": 36,
+    "compiler": "Kotlin 2.4.10 / JVM 17",
+    "dependencies": "Actual supplied RikiVpn AAR; official Appnext 3.0.0.17, Play Billing 9.1.0 and AndroidX artifacts",
+    "limitation": "Isolated API compile uses resource-ID stand-ins. Complete browser and menu wiring not compiled."
+  },
+  "syntaxChecks": {
+    "kotlinFiles": 18,
+    "groovyFiles": 2,
+    "resourceXmlFiles": 596,
+    "python": true,
+    "workflowYaml": true
+  },
+  "fullBrowserBuild": "Prior full attempt stopped before browser compilation because the runtime Java installation lacks Gradle JAVA_COMPILER capability. No successful full APK/AAB build is claimed.",
+  "requiredAccountSetup": [
+    "Activate the monthly auto-renew subscription/base plan for bharatx_remove_ads_monthly in Play Console; set India INR 15.00 and USD/other prices there.",
+    "Enable all three ad formats for the provided Appnext placement and correct app package; validate live inventory on a device."
+  ]
+}

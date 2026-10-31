@@ -1,0 +1,23 @@
+{
+  "appnext": {
+    "coordinate": "com.appnext.sdk:appnext-sdk:3.0.0.17",
+    "url": "https://dl.appnext.com/com/appnext/sdk/appnext-sdk/3.0.0.17/appnext-sdk-3.0.0.17.aar",
+    "sha256": "be9481f6565c3b9d98e997a8aaf3de2799e847da3c07ca8f8e41c4368139339f"
+  },
+  "billing": {
+    "coordinate": "com.android.billingclient:billing:9.1.0",
+    "url": "https://dl.google.com/dl/android/maven2/com/android/billingclient/billing/9.1.0/billing-9.1.0.aar",
+    "sha256": "d28286d4e4c18725510980de01211d9b72501e7146d96817fa0c9999af9b0d22"
+  },
+  "testJson": {
+    "coordinate": "org.json:json:20250517",
+    "url": "https://repo.maven.apache.org/maven2/org/json/json/20250517/json-20250517.jar",
+    "sha256": "3ea61b2a06e31edf1c91134fe9106b0ebb16628be169f3db75bc7a2b06b45796"
+  },
+  "appnextPlacementId": "dd500dee-43a9-40c7-8b70-afd51662f044",
+  "subscriptionProductId": "bharatx_remove_ads_monthly",
+  "intendedIndiaMonthlyPriceInr": "15.00",
+  "displayPrice": "Google Play formattedPrice; no hard-coded USD conversion",
+  "reward": "One Premium connection; failed attempts before first CONNECTED retain credit",
+  "entitlementVerification": "Live Google Play Billing query and acknowledgement, client side; no backend receipt verification"
+}

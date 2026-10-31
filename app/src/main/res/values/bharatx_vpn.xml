@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="bharatx_vpn_title">BharatX VPN</string>
+    <string name="bharatx_vpn_back">Back to browser</string>
+    <string name="bharatx_vpn_scope">VPN for BharatX Browser only</string>
+    <string name="bharatx_vpn_free">Free</string>
+    <string name="bharatx_vpn_premium">Premium</string>
+    <string name="bharatx_vpn_connect">Connect</string>
+    <string name="bharatx_vpn_disconnect">Disconnect</string>
+    <string name="bharatx_vpn_disconnected">Disconnected</string>
+    <string name="bharatx_vpn_connecting">Connecting…</string>
+    <string name="bharatx_vpn_authenticating">Authenticating…</string>
+    <string name="bharatx_vpn_connected">Connected</string>
+    <string name="bharatx_vpn_reconnecting">Reconnecting…</string>
+    <string name="bharatx_vpn_waiting">Waiting for network…</string>
+    <string name="bharatx_vpn_disconnecting">Disconnecting…</string>
+    <string name="bharatx_vpn_error">Connection error</string>
+    <string name="bharatx_vpn_loading">Loading servers…</string>
+    <string name="bharatx_vpn_choose_server">Choose a server, then tap Connect.</string>
+    <string name="bharatx_vpn_no_free">No free servers are available in this version.</string>
+    <string name="bharatx_vpn_no_premium">Premium servers are not available in this version. Contact support for availability.</string>
+    <string name="bharatx_vpn_no_traffic">Uploaded: 0 B · Downloaded: 0 B</string>
+    <string name="bharatx_vpn_traffic">Uploaded: %1$s · Downloaded: %2$s\nUpload: %3$s/s · Download: %4$s/s</string>
+    <string name="bharatx_vpn_active_note">The VPN continues in the background. Use Disconnect here or in the VPN notification to stop it.</string>
+    <string name="bharatx_vpn_reconnect_note">The VPN attempts to reconnect after a drop. While disconnected or reconnecting, browsing may use your normal connection. Other apps use their normal connection.</string>
+    <string name="bharatx_vpn_privacy">Privacy Policy</string>
+    <string name="bharatx_vpn_support">Contact support</string>
+    <string name="bharatx_vpn_disclosure_title">Connect BharatX Browser through a VPN?</string>
+    <string name="bharatx_vpn_disclosure">BharatX will send this browser’s network traffic, including website requests and DNS lookups, through the selected server: %1$s. The VPN encrypts traffic between your device and that server. The server operator receives your IP address and can observe connection destinations and traffic that is not protected by HTTPS. Provider login details, when required, are sent to that provider to authenticate. This integration does not upload browsing logs to Nitaistudio. The VPN can continue in the background until you disconnect. Other apps are excluded. Connecting may replace another active VPN. Server availability and privacy practices depend on its operator. Android will ask for VPN permission.</string>
+    <string name="bharatx_vpn_agree">Agree and continue</string>
+    <string name="bharatx_vpn_requesting">Requesting VPN connection…</string>
+    <string name="bharatx_vpn_username">Provider username</string>
+    <string name="bharatx_vpn_password">Provider password</string>
+    <string name="bharatx_vpn_provider_login">VPN provider login</string>
+    <string name="bharatx_vpn_provider_login_note">Use credentials issued by this VPN provider. Access is verified by the server. The browser does not save them in preferences.</string>
+    <string name="bharatx_vpn_required">Required</string>
+    <string name="bharatx_vpn_auth_error">The server needs valid provider credentials. Check your login or choose another server.</string>
+    <string name="bharatx_vpn_permission_error">VPN permission was denied or revoked. Tap Connect to request it again.</string>
+    <string name="bharatx_vpn_engine_error">The VPN engine is unavailable in this installation. Contact support.</string>
+    <string name="bharatx_vpn_profile_error">The bundled server configuration could not be loaded. Contact support.</string>
+    <string name="bharatx_vpn_connection_error">Could not connect. Check your network, retry, or choose another server.</string>
+    <string name="rikivpn_default_title">BharatX VPN</string>
+    <string name="rikivpn_channel_name">BharatX VPN status</string>
+</resources>

@@ -1,0 +1,23 @@
+{
+  "sdk": "RikiVpn",
+  "version": "1.0.0",
+  "artifact": "app/libs/rikivpn-1.0.0.aar",
+  "sha256": "aac61d78d6a408c191f80e8f2f5e8145ae59a43e3223c9f1d526f04c654b48e3",
+  "origin": "User-supplied AAR; exact SDK and native engine source revision not independently supplied",
+  "abisInAar": [
+    "arm64-v8a",
+    "armeabi-v7a",
+    "x86",
+    "x86_64"
+  ],
+  "abisInBrowserBundle": [
+    "arm64-v8a",
+    "armeabi-v7a",
+    "x86_64"
+  ],
+  "engineFiles": [
+    "libopenvpn.so",
+    "libovpnexec.so"
+  ],
+  "minCompileSdk": 36
+}

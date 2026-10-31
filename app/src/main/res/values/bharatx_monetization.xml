@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="bharatx_ads_choices">Ad choices</string>
+    <string name="bharatx_ads_disclosure">BharatX can show ads from Appnext on this VPN screen. Appnext processes your IP address, device and app identifiers, installed-app information, advertising ID when available, and ad interactions to select, deliver and measure ads. Location may also be processed if Android permissions allow it. BharatX does not provide your browsing history, website addresses, VPN packets or DNS requests to this integration. Tap Allow ads to enable the SDK. You can change this choice here later. Declining keeps Free VPN available; rewarded Premium access needs an ad or an active subscription.</string>
+    <string name="bharatx_ads_allow">Allow ads</string>
+    <string name="bharatx_ads_decline">Decline</string>
+    <string name="bharatx_advertisement">Advertisement</string>
+    <string name="bharatx_reward_connect">Watch video and connect</string>
+    <string name="bharatx_reward_terms">Watch one complete video to unlock one Premium connection. Closing early does not unlock it. If the first connection fails, you can retry without another video. After a successful session ends, the next connection needs a new video or an active subscription. Premium is an access option in this app; it does not guarantee a private server or better speed.</string>
+    <string name="bharatx_reward_ready">Video completed. Your Premium connection is ready; tap Connect.</string>
+    <string name="bharatx_reward_loading">Loading rewarded video…</string>
+    <string name="bharatx_reward_unavailable">The video was not completed or no ad is available. Nothing was unlocked. Try again, choose Free, or restore your subscription.</string>
+    <string name="bharatx_reward_required">Watch a complete video or restore an active subscription before connecting to Premium.</string>
+    <string name="bharatx_subscription_checking">Checking Google Play subscription…</string>
+    <string name="bharatx_subscription_loading_price">Monthly ad removal — price unavailable</string>
+    <string name="bharatx_subscription_price">Remove ads — %1$s / month</string>
+    <string name="bharatx_subscription_benefits">Monthly subscription: no banner, interstitial or rewarded ads. Connect to Premium without watching a video.</string>
+    <string name="bharatx_subscription_active">Subscription active. All ad formats are disabled and Premium needs no video.</string>
+    <string name="bharatx_subscription_terms">Charged through Google Play at the price shown. Automatically renews each month unless cancelled in Google Play. Cancel before renewal to avoid the next charge; access continues for the paid period. Price and currency come from your Google Play account. No free trial is offered here.</string>
+    <string name="bharatx_subscription_restore">Restore purchases</string>
+    <string name="bharatx_subscription_manage">Manage subscription</string>
+    <string name="bharatx_billing_unavailable">Google Play billing or this monthly plan is unavailable. Use a supported Google Play installation and account, then retry.</string>
+    <string name="bharatx_billing_error">Could not confirm the purchase with Google Play. Retry Restore purchases. Free VPN remains available.</string>
+    <string name="bharatx_purchase_pending">Payment is pending. Ads will be removed after Google Play confirms the purchase.</string>
+    <string name="bharatx_purchase_cancelled">Purchase cancelled. No subscription was unlocked.</string>
+</resources>

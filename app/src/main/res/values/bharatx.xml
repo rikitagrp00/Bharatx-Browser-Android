@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPDX-License-Identifier: MPL-2.0 -->
+<resources>
+    <color name="bharatx_icon_background">#061528</color>
+    <string name="bharatx_about_content" translatable="false">BharatX Browser\nDeveloped by Nitaistudio\nMade in India</string>
+    <string name="bharatx_website" translatable="false">Developer website</string>
+    <string name="bharatx_disclaimer" translatable="false">Disclaimer</string>
+    <string name="bharatx_about" translatable="false">About BharatX Browser</string>
+    <string name="bharatx_privacy" translatable="false">Privacy Policy</string>
+    <string name="bharatx_support" translatable="false">Support: nitai.grp00@gmail.com</string>
+</resources>

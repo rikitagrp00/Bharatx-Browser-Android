@@ -1,0 +1,25 @@
+{
+  "applicationId": "com.nitaistudio.bharatxbrowser",
+  "versionName": "1.36.0",
+  "sourceAuditPassed": true,
+  "resourceXmlFilesParsed": 594,
+  "kotlinSyntaxFilesPassed": 8,
+  "groovySyntaxFilesPassed": 2,
+  "pythonSyntaxPassed": true,
+  "sdkScriptSyntaxPassed": true,
+  "workflowStructurePassed": true,
+  "upstreamAndroidComponentsCommit": "5d1ba5a731796253beb47ec7c6e0060420974c6d",
+  "componentPreparationRunsPassed": 2,
+  "originalLicenseFilesPreserved": [
+    "app/src/androidTest/assets/resources/TestTT_-LICENSE",
+    "config/license.template",
+    "plugins/gradle-python-envs/LICENSE"
+  ],
+  "productLogoSha256": "410d46a1d9620af6bd185c35933bc4d0ecba7036006a6bfd865b3a63ef737f17",
+  "gradleConfigurationAttempted": true,
+  "gradleConfigurationPassed": false,
+  "gradleBlocker": "Plugin org.gradle.kotlin.kotlin-dsl version 6.7.6 could not be resolved from the configured repositories.",
+  "apkBuilt": false,
+  "aabBuilt": false,
+  "deviceTestExecuted": false
+}

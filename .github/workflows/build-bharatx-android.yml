@@ -1,0 +1,105 @@
+name: Build BharatX Browser Android
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, iceraven]
+    paths-ignore: ["docs/**", "**/*.md"]
+permissions:
+  contents: read
+concurrency:
+  group: bharatx-android-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  android:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 180
+    env:
+      BHARATX_KEYSTORE_PASSWORD: ${{ secrets.BHARATX_KEYSTORE_PASSWORD }}
+      BHARATX_KEY_ALIAS: ${{ secrets.BHARATX_KEY_ALIAS }}
+      BHARATX_KEY_PASSWORD: ${{ secrets.BHARATX_KEY_PASSWORD }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+          submodules: false
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: "17"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: gradle/actions/setup-gradle@v6
+      - name: Audit product source
+        id: brand
+        run: python3 automation/bharatx/audit.py
+      - name: Verify supplied VPN SDK parser and asset profiles
+        run: |
+          bash gradlew --version
+          python3 automation/bharatx/verify_sdk_parser.py
+          python3 automation/bharatx/verify_monetization.py
+      - name: Install Python build dependencies
+        run: |
+          python3 -m venv venv
+          venv/bin/python -m pip install 'glean_parser~=20.1'
+      - name: Prepare locked browser component source
+        run: venv/bin/python automation/bharatx/prepare_source.py
+      - name: Install the SDK versions used by this source
+        run: bash automation/bharatx/install_sdk.sh
+      - name: Configure optional release upload key
+        id: signing
+        env:
+          BHARATX_KEYSTORE_BASE64: ${{ secrets.BHARATX_KEYSTORE_BASE64 }}
+        run: python3 automation/bharatx/prepare_signing.py
+      - name: Build installable debug APKs
+        run: bash gradlew :app:assembleForkDebug -PbharatxApkAbi=arm64-v8a --no-daemon --stacktrace
+      - name: Build release APKs
+        run: bash gradlew :app:assembleForkRelease -PbharatxApkAbi=arm64-v8a --no-daemon --stacktrace
+      - name: Build release app bundle
+        run: bash gradlew :app:bundleForkRelease --no-daemon --stacktrace
+      - name: Verify packaged identity, policies and native VPN engines
+        env:
+          RELEASE_SIGNED: ${{ steps.signing.outputs.state }}
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import shutil
+          output = Path('dist'); output.mkdir(exist_ok=True)
+          base = Path('gradle/build/app/outputs')
+          for folder, pattern in [('apk/forkDebug', '*.apk'), ('apk/forkRelease', '*.apk'), ('bundle/forkRelease', '*.aab')]:
+              files = list((base / folder).glob(pattern))
+              if not files: raise SystemExit('Missing Android output: ' + folder)
+              for file in files: shutil.copy2(file, output / file.name)
+          PY
+          args=()
+          if [[ "$RELEASE_SIGNED" == signed ]]; then args+=(--signed); fi
+          python3 automation/bharatx/verify_outputs.py dist --build-tools "$ANDROID_HOME/build-tools/36.0.0" "${args[@]}"
+      - uses: actions/upload-artifact@v7
+        with:
+          name: BharatXBrowser-Android-${{ steps.brand.outputs.version }}-${{ steps.signing.outputs.state }}
+          path: dist/
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 7
+      - name: Archive matching covered source
+        run: |
+          tar --exclude='.git' --exclude='.gradle' --exclude='venv' --exclude='gradle/build' --exclude='build' --exclude='dist' --exclude='local.properties' --exclude='__pycache__' -czf "$RUNNER_TEMP/BharatXBrowser-Android-MPL-Source.tar.gz" .
+      - uses: actions/upload-artifact@v7
+        with:
+          name: BharatXBrowser-Android-MPL-Source-${{ steps.brand.outputs.version }}
+          path: ${{ runner.temp }}/BharatXBrowser-Android-MPL-Source.tar.gz
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 7
+      - name: Preserve failure diagnostics
+        if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: BharatXBrowser-Android-diagnostics
+          path: |
+            gradle/build/app/outputs/logs/
+            gradle/build/app/reports/
+          if-no-files-found: ignore
+      - name: Remove temporary signing material
+        if: always()
+        run: rm -f "$RUNNER_TEMP/bharatx-upload-key.jks"
