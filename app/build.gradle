@@ -905,6 +905,15 @@ mozilla {
     ]
 }
 
+// BharatX: the app ships its own no-op stub of com.google.android.gms.ads.identifier.AdvertisingIdClient
+// (app/src/main/java/com/google/android/gms/ads/identifier/AdvertisingIdClient.java). A transitive
+// play-services-ads-identifier AAR also provides that class, which makes R8 fail with "defined multiple
+// times" in release builds. Excluding the AAR keeps the stub as the single definition. Debug builds
+// do not run R8, which is why they were never affected.
+configurations.configureEach {
+    exclude group: 'com.google.android.gms', module: 'play-services-ads-identifier'
+}
+
 dependencies {
     detektPlugins project(":components:tooling-detekt")
     detektPlugins project(":mozilla-detekt-rules")
